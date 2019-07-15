@@ -1,5 +1,15 @@
 <template>
   <div>
-    <p>Hey</p>
+    <Bulb />
   </div>
 </template>
+
+<script>
+import Bulb from '~/components/BaseBulbIcon'
+
+export default {
+  components: {
+    Bulb
+  }
+}
+</script>

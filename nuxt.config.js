@@ -31,7 +31,19 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/eslint-module'],
+  modules: ['nuxt-svg-loader'],
+  /*
+   * SVG Loader configuration
+   */
+  svgLoader: {
+    svgoConfig: {
+      plugins: [
+        {
+          prefixIds: false
+        } // Disables prefixing for SVG ClassNames
+      ]
+    }
+  },
   /*
    ** Build configuration
    */
@@ -39,19 +51,19 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
-      // Exécuter ESLint lors de la sauvegarde
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/,
-          options: {
-            fix: true
-          }
-        })
-      }
-    }
+    // extend(config, ctx) {
+    //   // Exécuter ESLint lors de la sauvegarde
+    //   if (ctx.isDev && ctx.isClient) {
+    //     config.module.rules.push({
+    //       enforce: 'pre',
+    //       test: /\.(js|vue)$/,
+    //       loader: 'eslint-loader',
+    //       exclude: /(node_modules)/,
+    //       options: {
+    //         // fix: true
+    //       }
+    //     })
+    //   }
+    // }
   }
 }
