@@ -18,7 +18,51 @@
    sodipodi:docname="bulb.svg"
    style="enable-background:new">
   <defs
-     id="defs3729" />
+     id="defs3729">
+    <filter
+       id="softGlow"
+       height="300%"
+       width="300%"
+       x="-75%"
+       y="-75%">
+      <!-- Thicken out the original shape -->
+      <feMorphology
+         operator="dilate"
+         radius="3"
+         in="SourceAlpha"
+         result="thicken"
+         id="feMorphology815" />
+      <!-- Use a gaussian blur to create the soft blurriness of the glow -->
+      <feGaussianBlur
+         in="thicken"
+         stdDeviation="18"
+         result="blurred"
+         id="feGaussianBlur817" />
+      <!-- Change the colour -->
+      <feFlood
+         flood-color="rgb(255,254,60)"
+         result="glowColor"
+         id="feFlood819"
+         flood-opacity="1" />
+      <!-- Color in the glows -->
+      <feComposite
+         operator="in"
+         result="softGlow_colored"
+         id="feComposite821"
+         in="glowColor"
+         in2="blurred" />
+      <!--	Layer the effects together -->
+      <feMerge
+         id="feMerge827">
+        <feMergeNode
+           in="softGlow_colored"
+           id="feMergeNode823" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode825" />
+      </feMerge>
+    </filter>
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -27,8 +71,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.9899495"
-     inkscape:cx="144.68897"
-     inkscape:cy="334.82895"
+     inkscape:cx="143.67882"
+     inkscape:cy="255.0269"
      inkscape:document-units="mm"
      inkscape:current-layer="bulb"
      showgrid="false"
@@ -68,7 +112,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -78,7 +122,7 @@
      inkscape:label="bulb">
     <path
        class=""
-       style="opacity:1;fill:#ececec;fill-opacity:1;fill-rule:nonzero;stroke:#515151;stroke-width:1.20000005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
+       style="opacity:1;fill:#f4f4f4;fill-opacity:1;fill-rule:nonzero;stroke:#515151;stroke-width:1.20000005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
        d="m 86.41105,101.6813 c 0,0 -4.97554,5.45957 -6.16101,8.85409 -1.78469,5.11034 -0.2719,10.84741 -1.03943,16.20573 -0.26547,1.85329 -0.61508,3.71176 -1.22843,5.48065 -3.89078,11.22102 -10.60778,21.26245 -15.40253,32.12798 -5.41221,12.26478 -5.01578,26.7091 0.37798,38.27009 7.72042,16.54797 26.17008,26.59142 43.08928,26.83631 15.75139,0.22799 32.43962,-10.47445 40.82143,-23.8125 7.3974,-11.77155 6.95416,-32.21325 3.30729,-41.57738 -2.56501,-6.58622 -11.02268,-18.26001 -15.11905,-28.06473 -0.7874,-1.88465 -1.41685,-3.85149 -1.79538,-5.85863 -1.00688,-5.339 -0.39898,-10.88355 -1.22843,-16.25298 -0.25194,-1.63092 -0.40443,-3.33893 -1.13393,-4.8192 -1.34878,-2.73689 -5.78894,-7.09059 -5.78894,-7.09059"
        id="glass-copy"
        inkscape:connector-curvature="0"
@@ -138,6 +182,6 @@
        inkscape:connector-curvature="0"
        id="foot-6"
        d="m 106.5545,65.508473 c -4.39743,0.09752 -7.266353,1.32229 -9.709029,2.897641 -1.431792,0.914092 4.506259,2.205977 9.365839,2.183247 4.85958,-0.02273 8.92624,-1.303493 7.52392,-2.578963 -2.07616,-1.464297 -4.45512,-2.56876 -7.18073,-2.501925 z"
-       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.80820447;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.52941165;enable-background:new" />
+       style="fill:#161616;fill-opacity:1;stroke:none;stroke-width:0.80820447;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.52941165;enable-background:new" />
   </g>
 </svg>

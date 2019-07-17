@@ -19,6 +19,7 @@ export default {
 .bulb {
   width: 30px;
   height: 25px;
+  overflow: visible;
 }
 
 .bulb.on {
@@ -26,6 +27,7 @@ export default {
     fill: rgba(255, 254, 60, 0.8);
     fill-opacity: 1;
     transition: all 0.2s;
+    filter: url(#softGlow);
   }
 }
 

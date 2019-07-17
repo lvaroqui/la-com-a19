@@ -1,6 +1,11 @@
 <template>
   <div class="navbar">
-    <BaseNavBarElement v-for="item in items" :key="item.id" :text="item.text" :to="item.to" />
+    <BaseNavBarElement
+      v-for="item in items"
+      :key="item.id"
+      :text="item.text"
+      :to="item.to"
+    />
   </div>
 </template>
 
