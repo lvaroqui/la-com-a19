@@ -1,9 +1,8 @@
 <template>
-  <Bulb @click="anim" />
+  <Bulb class="bulb" :class="{ on: isAlight, off: !isAlight }" />
 </template>
 
 <script>
-import TweenMax from 'gsap/TweenMax'
 import Bulb from '~/assets/svg/bulb.svg?inline'
 
 export default {
@@ -11,16 +10,28 @@ export default {
     Bulb
   },
   props: {
-    alight: Boolean
-  },
-  methods: {
-    anim() {
-      const test = document.getElementsByClassName('bulb-glass')[0]
-      console.log(test)
-      TweenMax.to(test, 10, {
-        fill: 'rgba(200,100,100,0.3)'
-      })
-    }
+    isAlight: Boolean
   }
 }
 </script>
+
+<style lang="scss">
+.bulb {
+  width: 30px;
+  height: 25px;
+}
+
+.bulb.on {
+  .bulb-glass {
+    fill: rgba(255, 254, 60, 0.8);
+    fill-opacity: 1;
+    transition: all 0.2s;
+  }
+}
+
+.bulb.off {
+  .bulb-glass {
+    transition: all 0.2s;
+  }
+}
+</style>

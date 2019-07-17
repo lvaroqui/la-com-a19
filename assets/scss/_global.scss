@@ -1,0 +1,11 @@
+$main-color: #320b71;
+$secondary-color: #41ddff;
+
+@font-face {
+  font-family: MainFont;
+  src: url('~assets/fonts/boulevard.ttf');
+}
+
+body {
+  font-family: MainFont, serif;
+}

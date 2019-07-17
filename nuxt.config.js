@@ -31,7 +31,10 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['nuxt-svg-loader'],
+  modules: ['nuxt-svg-loader', '@nuxtjs/style-resources'],
+  styleResources: {
+    scss: ['assets/scss/_global.scss']
+  },
   /*
    * SVG Loader configuration
    */
