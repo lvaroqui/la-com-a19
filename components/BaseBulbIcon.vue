@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Bulb from '~/assets/svg/bulb.svg?inline'
+import Bulb from '~/assets/svg/bulb2.svg?inline'
 
 export default {
   components: {
@@ -17,13 +17,11 @@ export default {
 
 <style lang="scss">
 .bulb {
-  width: 30px;
-  height: 25px;
   overflow: visible;
 }
 
 .bulb.on {
-  .bulb-glass {
+  .bulb-light-container {
     fill: rgba(255, 254, 60, 0.8);
     fill-opacity: 1;
     transition: all 0.2s;
@@ -32,7 +30,7 @@ export default {
 }
 
 .bulb.off {
-  .bulb-glass {
+  .bulb-light-container {
     transition: all 0.2s;
   }
 }

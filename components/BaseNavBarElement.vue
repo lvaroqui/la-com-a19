@@ -52,9 +52,10 @@ export default {
 
 <style lang="scss" scoped>
 .navbar-element {
+  font-size: 20px;
   display: flex;
   float: left;
-  padding: 7px 0 7px 20px;
+  padding: 7px 0 7px 10px;
   cursor: pointer;
   user-select: none;
   /*&:hover {
@@ -72,10 +73,12 @@ export default {
   display: flex;
   justify-content: center;
   align-content: center;
-  flex-direction: column; /* column | row */
+  flex-direction: column;
 }
 
 .bulb-icon {
-  padding-top: 3px;
+  width: 30px;
+  height: 33px;
+  padding: 3px 6px 0;
 }
 </style>
