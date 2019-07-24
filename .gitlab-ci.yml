@@ -1,0 +1,19 @@
+before_script:
+  - yarn install
+
+stages:
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+    
+deploy-test:
+  stage: deploy
+  tags:
+    - deploy-test
+  script:
+    - yarn run build
+    - rsync -avz dist/ /var/www/la-com-a19/
+  only:
+    - develop
