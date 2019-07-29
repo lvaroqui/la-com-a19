@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Bulb from '~/assets/svg/bulb2.svg?inline'
+import Bulb from '~/assets/svg/bulb.svg?inline'
 
 export default {
   components: {
@@ -22,7 +22,7 @@ export default {
 
 .bulb.on {
   .bulb-light-container {
-    fill: rgba(255, 254, 60, 0.8);
+    fill: $light-color;
     fill-opacity: 1;
     transition: all 0.2s;
     filter: url(#softGlow);

@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavBar />
-    <nuxt />
+    <nuxt style="color: white" />
   </div>
 </template>
 
@@ -12,9 +12,17 @@ export default {
 }
 </script>
 
-<style>
-body {
+<style lang="scss">
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: MainFont, serif;
+  overflow: hidden;
+  z-index: 0;
+  background-color: $dark-color;
 }
 </style>

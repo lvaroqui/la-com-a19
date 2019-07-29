@@ -6,10 +6,12 @@
     @mouseenter.native="alight = true"
     @mouseleave.native="updateLamp"
   >
-    <div class="navbar-element-text">
-      {{ text }}
+    <div style="display: flex; float: left">
+      <div class="navbar-element-text">
+        {{ text }}
+      </div>
+      <BaseBulbIcon class="bulb-icon" :is-alight="alight" />
     </div>
-    <BaseBulbIcon class="bulb-icon" :is-alight="alight" />
   </nuxt-link>
 </template>
 
@@ -53,20 +55,9 @@ export default {
 <style lang="scss" scoped>
 .navbar-element {
   font-size: 20px;
-  display: flex;
-  float: left;
-  padding: 7px 0 7px 10px;
   cursor: pointer;
   user-select: none;
-  /*&:hover {
-    background-color: lighten($main-color, 30%);
-    /transition: all 0.5s;
-  }*/
 }
-
-/*.nuxt-link-exact-active {
-  background-color: lighten($main-color, 15%);
-}*/
 
 .navbar-element-text {
   color: white;
