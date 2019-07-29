@@ -1,9 +1,10 @@
 <template>
   <div>
     <nav>
-      <div class="nav-logo">
-        <h4>La Com' A19</h4>
-      </div>
+      <nuxt-link tag="div" to="/" class="nav-brand">
+        <Logo class="nav-logo" />
+        <h4>La Compagnie des Lampes</h4>
+      </nuxt-link>
       <ul class="nav-links" :class="{ 'nav-active': isActive }">
         <li v-for="item in items" :key="item.id" @click="toggleNav">
           <BaseNavBarElement :text="item.text" :to="item.to" />
@@ -29,9 +30,11 @@
 
 <script>
 import BaseNavBarElement from './BaseNavBarElement'
+import Logo from '~/assets/svg/logo.svg?inline'
+
 export default {
   name: 'TheNavBar',
-  components: { BaseNavBarElement },
+  components: { BaseNavBarElement, Logo },
   data() {
     return {
       items: [
@@ -52,21 +55,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$nav-min-height: 8vh;
+$nav-height: 70px;
 
 nav {
   position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: $nav-min-height;
+  height: $nav-height;
   background-color: $intermediate-color;
   z-index: 10;
 }
 
-.nav-logo {
+.nav-brand {
   color: white;
-  font-size: 22px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  @include screen-max-width(390px) {
+    font-size: 16px;
+  }
+}
+
+.nav-logo {
+  height: 70px;
+  width: 70px;
 }
 
 .nav-links {
@@ -92,6 +107,7 @@ nav {
 .nav-burger {
   cursor: pointer;
   display: none;
+  padding: 0 10px;
   &.nav-active {
     $test: 8px;
     .nav-burger-1 {
@@ -116,7 +132,7 @@ nav {
   transition: all 0.3s ease;
 }
 
-@include screen-max-width(768px) {
+@include screen-max-width(830px) {
   .nav-burger {
     display: block;
   }
@@ -132,7 +148,7 @@ $nav-mobile-menu-height: 40vh;
 .nav-links-mobile {
   position: absolute;
   height: $nav-mobile-menu-height;
-  top: $nav-min-height;
+  top: $nav-height;
   background-color: darken($intermediate-color, 10);
   display: flex;
   flex-direction: column;
