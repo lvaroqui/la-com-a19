@@ -6,7 +6,7 @@
         <h4>La Compagnie des Lampes</h4>
       </nuxt-link>
       <ul class="nav-links" :class="{ 'nav-active': isActive }">
-        <li v-for="item in items" :key="item.id" @click="toggleNav">
+        <li v-for="item in items" :key="item.id">
           <BaseNavBarElement :text="item.text" :to="item.to" />
         </li>
       </ul>
