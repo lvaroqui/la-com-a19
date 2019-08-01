@@ -55,8 +55,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$nav-height: 70px;
-
 nav {
   position: relative;
   display: flex;

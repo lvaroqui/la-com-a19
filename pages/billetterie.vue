@@ -1,6 +1,11 @@
 <template>
   <div>
-    Billetterie
+    <div class="illustration">
+      Billetterie
+    </div>
+    <div class="content">
+      TOTO
+    </div>
   </div>
 </template>
 
@@ -10,4 +15,12 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.illustration {
+  height: 100%;
+}
+
+.content {
+  min-height: 100%;
+}
+</style>
