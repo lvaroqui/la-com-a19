@@ -55,6 +55,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$mobile-width-breakpoint: 1200px;
+
 nav {
   position: relative;
   display: flex;
@@ -67,12 +69,13 @@ nav {
 
 .nav-brand {
   color: white;
-  font-size: 18px;
+  font-size: 1.5em;
   display: flex;
+  align-content: center;
   align-items: center;
   user-select: none;
   cursor: pointer;
-  @include screen-max-width(390px) {
+  @include screen-max-width(470px) {
     font-size: 16px;
   }
 }
@@ -85,9 +88,10 @@ nav {
 .nav-links {
   display: flex;
   justify-content: space-around;
+  height: 100%;
   width: 45%;
 
-  @include screen-max-width(1250px) {
+  @include screen-max-width(1500px) {
     width: 60%;
   }
 }
@@ -130,7 +134,7 @@ nav {
   transition: all 0.3s ease;
 }
 
-@include screen-max-width(830px) {
+@include screen-max-width($mobile-width-breakpoint) {
   .nav-burger {
     display: block;
   }
@@ -156,7 +160,7 @@ $nav-mobile-menu-height: 40vh;
   transform: translateY(-$nav-mobile-menu-height);
   transition: transform 0.3s ease-in, opacity 0.3s ease-in;
   z-index: 3;
-  @include screen-max-width(768px) {
+  @include screen-max-width($mobile-width-breakpoint) {
     &.nav-active {
       opacity: 1;
       transform: translateY(0);
