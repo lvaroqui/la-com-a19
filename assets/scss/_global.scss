@@ -1,11 +1,83 @@
-$dark-color: #3f1727;
-$light-color: #fcf996;
-$intermediate-color: #c83b55;
-$dark-grey-color: #252526;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-$nav-height: 70px;
+body {
+  font-family: MainFont, serif;
+  overflow: hidden;
+  z-index: 0;
+  background-color: $dark-color;
+  text-shadow: 2px 2px 2px black;
+}
 
 @font-face {
   font-family: MainFont;
   src: url('~assets/fonts/boulevard.ttf');
+}
+
+@font-face {
+  font-family: TextFont;
+  src: url('~assets/fonts/Rounded_Elegance.ttf');
+}
+
+
+.text-font {
+  font-family: TextFont, serif;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.full-page {
+  width: 100%;
+  min-height: 100%;
+}
+
+.horizontal-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vertical-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-text {
+  width: 100%;
+  text-align: center;
+}
+
+.container {
+  padding: 15px;
+  display: block;
+  @include xl {
+    width: 65%;
+  }
+}
+
+.scroll-snap-parent {
+  scroll-snap-type: y proximity;
+}
+
+.scroll-snap-child {
+  scroll-snap-align: start;
+}
+
+p {
+  text-indent: 2em;
+  margin-bottom: 0.5em;
+  text-align: justify;
+}
+
+p,
+li {
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
 }

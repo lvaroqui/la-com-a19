@@ -27,7 +27,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['assets/scss/_global.scss'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -37,7 +37,7 @@ export default {
    */
   modules: ['nuxt-svg-loader', '@nuxtjs/style-resources'],
   styleResources: {
-    scss: ['assets/scss/_global.scss', 'assets/scss/_responsive.scss']
+    scss: ['assets/scss/_variables.scss', 'assets/scss/_responsive.scss']
   },
   /*
    * SVG Loader configuration

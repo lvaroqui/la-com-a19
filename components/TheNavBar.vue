@@ -6,7 +6,7 @@
         <h4>La Compagnie des Lampes</h4>
       </nuxt-link>
       <ul class="nav-links" :class="{ 'nav-active': isActive }">
-        <li v-for="item in items" :key="item.id">
+        <li class="nav-link" v-for="item in items" :key="item.id">
           <BaseNavBarElement :text="item.text" :to="item.to" />
         </li>
       </ul>
@@ -21,7 +21,7 @@
       </div>
     </nav>
     <ul class="nav-links-mobile" :class="{ 'nav-active': isActive }">
-      <li v-for="item in items" :key="item.id" @click="toggleNav">
+      <li class="" v-for="item in items" :key="item.id" @click="toggleNav">
         <BaseNavBarElement :text="item.text" :to="item.to" />
       </li>
     </ul>
@@ -40,7 +40,7 @@ export default {
       items: [
         { id: 0, text: 'Accueil', to: '/' },
         { id: 1, text: "L'asso", to: '/asso' },
-        { id: 2, text: 'Synopsis', to: '/synopsis' },
+        { id: 2, text: 'Partenaires', to: '/partenaires' },
         { id: 3, text: 'Billetterie', to: '/billetterie' }
       ],
       isActive: false
@@ -106,6 +106,10 @@ nav {
   list-style: none;
 }
 
+.nav-link {
+  height: 100%;
+}
+
 .nav-burger {
   cursor: pointer;
   display: none;
@@ -146,7 +150,7 @@ nav {
   }
 }
 
-$nav-mobile-menu-height: 40vh;
+$nav-mobile-menu-height: 250px;
 .nav-links-mobile {
   position: absolute;
   height: $nav-mobile-menu-height;

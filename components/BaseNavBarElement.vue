@@ -52,7 +52,7 @@ export default {
 
 <style lang="scss" scoped>
 .navbar-element {
-  font-size: 1.5em;
+  font-size: 1.3em;
   cursor: pointer;
   user-select: none;
   display: flex;
@@ -71,6 +71,6 @@ export default {
 
 .bulb-icon {
   height: 80%;
-  max-width: 30px;
+  max-width: 22px;
 }
 </style>

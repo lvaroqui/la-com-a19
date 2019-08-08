@@ -13,19 +13,6 @@ export default {
 </script>
 
 <style lang="scss">
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: MainFont, serif;
-  overflow: hidden;
-  z-index: 0;
-  background-color: $dark-color;
-}
-
 .root-container {
   overflow: hidden;
 }
@@ -34,11 +21,6 @@ body {
   color: white;
   width: 100%;
   height: calc(100vh - #{$nav-height});
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-
-  & > div {
-    scroll-snap-align: start;
-  }
+  overflow-y: auto;
 }
 </style>
