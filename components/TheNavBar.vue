@@ -6,7 +6,7 @@
         <h4>La Compagnie des Lampes</h4>
       </nuxt-link>
       <ul class="nav-links" :class="{ 'nav-active': isActive }">
-        <li class="nav-link" v-for="item in items" :key="item.id">
+        <li v-for="item in items" :key="item.id" class="nav-link">
           <BaseNavBarElement :text="item.text" :to="item.to" />
         </li>
       </ul>
@@ -21,7 +21,7 @@
       </div>
     </nav>
     <ul class="nav-links-mobile" :class="{ 'nav-active': isActive }">
-      <li class="" v-for="item in items" :key="item.id" @click="toggleNav">
+      <li v-for="item in items" :key="item.id" class="" @click="toggleNav">
         <BaseNavBarElement :text="item.text" :to="item.to" />
       </li>
     </ul>
@@ -38,10 +38,10 @@ export default {
   data() {
     return {
       items: [
-        { id: 0, text: 'Accueil', to: '/' },
         { id: 1, text: "L'asso", to: '/asso' },
         { id: 2, text: 'Partenaires', to: '/partenaires' },
-        { id: 3, text: 'Billetterie', to: '/billetterie' }
+        { id: 3, text: 'Billetterie', to: '/billetterie' },
+        { id: 4, text: 'Archives', to: '/archives' }
       ],
       isActive: false
     }
