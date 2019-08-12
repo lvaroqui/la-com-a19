@@ -30,6 +30,7 @@ export default {
 }
 
 .bulb.off {
+  filter: drop-shadow(2px 2px 1px black);
   .bulb-light-container {
     transition: all 0.2s;
   }
