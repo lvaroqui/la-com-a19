@@ -4,13 +4,15 @@
       <div class="container">
         <h1>La Com' c'est quoi ?</h1>
 
-        <div class="text-font">
+        <div>
           <p>
             La Comédie Musicale, nommée affectueusement « La Com' » par ses
             membres, est une commission du Pôle Artistique et Événementiel de
             l'Université de Technologie de Compiègne (<span
               class="bold"
-            >PAE UTC</span>). Créée en 1995, la Comédie Musicale est aujourd’hui un événement
+              style="padding: 0 0.2em "
+              >PAE UTC</span
+            >). Créée en 1995, la Comédie Musicale est aujourd’hui un événement
             incontournable de la vie associative UTCéenne.
           </p>
 
@@ -44,44 +46,215 @@
         </div>
       </div>
     </div>
-    <div class="scroll-snap-child full-page horizontal-flex team">
-      <div class="container">
-        <h1 class="center-text">
-          L'équipe
-        </h1>
-        <br>
-        <h2 class="center-text">
-          Le bureau
-        </h2>
-        <div class="bureau">
-          <div v-for="membre in bureau" :key="membre.id" class="vertical-flex">
-            <div class="avatar" />
-            <h2>{{ membre.role }}</h2>
-            <h3>{{ membre.name }}</h3>
-          </div>
-        </div>
-      </div>
+    <div class="scroll-snap-child full-page team">
+      <h1 class="center-text" style="padding: 25px 0; font-size: 2.5em">
+        L'équipe
+      </h1>
+      <base-team-section name="Bureau" :members="bureau" />
+      <base-team-section name="Team Communication" :members="teamCom" />
+      <base-team-section name="Team Log/Events" :members="teamOrga" />
+      <base-team-section name="Team Déco" :members="teamDeco" />
+      <base-team-section name="Team Théatre" :members="teamTheatre" />
+      <base-team-section name="Musique" :members="teamMusique" />
+      <base-team-section name="Danse" :members="teamDance" />
+      <base-team-section name="Chant" :members="teamChant" />
     </div>
-  </div>
   </div>
 </template>
 
 <script>
+import BaseTeamSection from '../components/BaseTeamSection'
 export default {
   name: 'Asso',
+  components: { BaseTeamSection },
   data() {
     return {
-      bureau: [
-        { id: 1, role: "Prez'", name: 'Calista Richard' },
-        { id: 2, role: 'Secrétaire', name: 'Victor Ronfaut' },
-        { id: 3, role: "Resp' Info", name: 'Luc Varoqui' }
-      ]
+      bureau: {
+        resps: [
+          { role: "Prez'", name: 'Calista Richard' },
+          { role: 'Vice Président', name: 'Cédric Dussaut' },
+          { role: 'Vice Présidente', name: 'Selma Leonardi' },
+          { role: 'Trésorier', name: 'Victor Tondolo' },
+          { role: 'Trésorier', name: 'Quentin Stauder' },
+          { role: 'Secrétaire', name: 'Victor Ronfaut' }
+        ]
+      },
+      teamCom: {
+        resps: [
+          { role: "Resp' Com'", name: 'Rami Jerbaka' },
+          { role: "Resp' Com'", name: 'Jonathan Perez' },
+          { role: "Resp' Com'", name: 'Quentin Miel' },
+          { role: "Resp' Com'", name: 'Clara Gauly' },
+          { role: "Resp' Info", name: 'Luc Varoqui' },
+          { role: 'Graphiste', name: 'Emma Bidault' }
+        ],
+        subTeams: [
+          { name: 'Les Membres', members: [{ name: 'Sebastian Balanta' }] }
+        ]
+      },
+      teamOrga: {
+        resps: [
+          { role: "Resp' Events", name: 'Elodie Martinaud' },
+          { role: "Resp' Log", name: 'Merwan Bouvier' }
+        ],
+        subTeams: [
+          {
+            name: 'Les Membres',
+            members: [{ name: 'Alix Levrault' }, { name: 'Cyrielle Debeir' }]
+          }
+        ]
+      },
+      teamDeco: {
+        resps: [
+          { role: "Resp' Déco", name: 'Laure Margerand' },
+          { role: "Resp' Déco", name: 'Sibylle Lebert' }
+        ],
+        subTeams: [
+          {
+            name: 'Les Membres',
+            members: [
+              { name: 'Alexia	Le Gall' },
+              { name: 'Corentin	Carrée' },
+              { name: 'Cloé	Bigaux' },
+              { name: 'Lauriane	Esther' },
+              { name: 'Camille	Apert' },
+              { name: 'Cheng	Ruochong' },
+              { name: 'Fanny	Bourgeois' },
+              { name: 'Anaïs	Latge' }
+            ]
+          }
+        ]
+      },
+      teamMusique: {
+        resps: [{ role: "Resp' Musique", name: 'Maxime Escourrou' }],
+        subTeams: [
+          {
+            name: 'Compositeurs',
+            members: [
+              { name: 'Cédric	Dussaut' },
+              { name: 'Rémy	Huet' },
+              { name: 'Rindra	Rabiaza' },
+              { name: 'jantie' },
+              { name: 'Salomé	Wanty' },
+              { name: 'Selma	Leonardi' },
+              { name: 'Thomas	Lécluse' },
+              { name: 'Marie	Margerand' },
+              { name: 'Simon	Devauchelle' },
+              { name: 'Victor	Ronfaut' },
+              { name: 'Matthieu	Decaux' },
+              { name: 'Hugo	Ollier' },
+              { name: 'Marianne	Guesneau' },
+              { name: 'Felix	Courades' },
+              { name: 'Laura	Hénin' }
+            ]
+          }
+        ]
+      },
+      teamTheatre: {
+        resps: [
+          { role: 'Scribe', name: 'Camille	Beaudou' },
+          { role: 'Scribe', name: 'Aurélien	Beranger ' },
+          { role: 'Metteuse en scène', name: 'Elise	Charlet' }
+        ],
+        subTeams: [
+          {
+            name: 'Assistants mise en scène',
+            members: [{ name: 'Camille	Rochelet' }, { name: 'Clément	Vadaine' }]
+          },
+          {
+            name: 'Acteurs',
+            members: [
+              { name: 'Simon	Cattez', role: 'Technicien' },
+              { name: 'Florence	Cupessala', role: 'Suzanne' },
+              { name: 'Cyrielle	Debeir', role: 'Raphaëlle' },
+              { name: 'Anaël	Lacour', role: 'Journaliste' },
+              { name: 'Anthony	Le Breton', role: 'Arsène' },
+              { name: 'Ismaël	Maayoufi', role: 'Mr. Pipe' },
+              { name: 'Céleste	Moudileno', role: 'Mohéa' },
+              { name: 'Théo	Pezin', role: 'Radio ' },
+              { name: 'Elise	Pinard', role: 'Chanteuse cabaret/PDG' },
+              { name: 'David	Solis', role: 'Maire' },
+              { name: 'Marion	Voisin', role: 'Journaliste 1' },
+              { name: 'Marianne	Guesneau', role: 'Journaliste 2' }
+            ]
+          }
+        ]
+      },
+      teamDance: {
+        resps: [
+          { role: "Resp' Chorégraphie", name: 'Jade Lecerf' },
+          { role: "Resp' Chorégraphie", name: 'Valentine Delrieu' }
+        ],
+        subTeams: [
+          {
+            name: 'Danseurs',
+            members: [
+              { name: 'Valentine Verschelde' },
+              { name: 'Marion Voisin' },
+              { name: 'Julie Hong' },
+              { name: 'Anne-Laure Caminade' },
+              { name: 'Marianne Guesneau' },
+              { name: 'Célia Yota' },
+              { name: 'Caroline Werlé' },
+              { name: 'Lola Daboussy' },
+              { name: 'Emma Faivre-Duboz' },
+              { name: 'Camille Beaudou' },
+              { name: 'ChloéGrippi' },
+              { name: 'Bérengère Lanneau' },
+              { name: 'Marine ERASMUS' },
+              { name: 'Maud Ondet' },
+              { name: 'Sebastian Balanta' },
+              { name: 'Sarah Dubus' },
+              { name: 'jantie' },
+              { name: 'Miora Layari' },
+              { name: 'Mélina Gauthier' },
+              { name: 'Ombeline Lheureux' },
+              { name: 'Clara Balmisse' },
+              { name: 'Renaud Voisin' }
+            ]
+          }
+        ]
+      },
+      teamChant: {
+        resps: [{ role: "Resp' Chant", name: 'Felana Ramiliariniaina' }],
+        subTeams: [
+          {
+            name: 'Choeurs',
+            members: [
+              { name: 'Valentine	Verschelde' },
+              { name: 'jantie' },
+              { name: 'Basile	Sugranes' },
+              { name: 'Julie	Hong' },
+              { name: 'Mélina	Gauthier' },
+              { name: 'Anne-Laure	Caminade' },
+              { name: 'Caroline	Werle' },
+              { name: 'Maria	Al Bejjani' },
+              { name: 'Celia	Yota' },
+              { name: 'Cécile	Forestier' },
+              { name: 'Juliette	Vanneuville' },
+              { name: 'Miora	Laiarinandrasana' },
+              { name: 'Aurore	Allard' },
+              { name: 'Hugo	Malet' },
+              { name: 'Etienne	Morambert' },
+              { name: 'Daniel	Duthoit' }
+            ]
+          }
+        ]
+      }
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+hr {
+  background-color: white;
+  height: 3px;
+  width: 60%;
+  margin: 2em auto;
+  box-shadow: 2px 2px 2px black;
+}
+
 .bold {
   color: $light-color;
 }
@@ -91,22 +264,6 @@ export default {
   text-shadow: 2px 2px 2px black;
 }
 
-.bureau {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  & > div {
-    margin: 15px 10px;
-  }
-}
-
-.avatar {
-  border: solid $intermediate-color 5px;
-  border-radius: 50%; height: 120px; width: 120px;
-  margin: 5px;
-  box-shadow: 2px 2px 10px black;
-}
 ul {
   padding-left: 2em;
 }
