@@ -1,5 +1,6 @@
 <template>
-  <div class="scroll-snap-parent">
+  <div v-scroll="handleScroll" class="scroll-snap-parent">
+    <base-scroll-arrow :show="showArrow"></base-scroll-arrow>
     <div class="scroll-snap-child full-page horizontal-flex">
       <div class="container">
         <h1>La Com' c'est quoi ?</h1>
@@ -64,11 +65,13 @@
 
 <script>
 import BaseTeamSection from '../components/BaseTeamSection'
+import BaseScrollArrow from '../components/BaseScrollArrow'
 export default {
   name: 'Asso',
-  components: { BaseTeamSection },
+  components: { BaseScrollArrow, BaseTeamSection },
   data() {
     return {
+      showArrow: true,
       bureau: {
         resps: [
           { role: "Prez'", name: 'Calista Richard' },
@@ -241,6 +244,11 @@ export default {
           }
         ]
       }
+    }
+  },
+  methods: {
+    handleScroll(event, position) {
+      this.showArrow = position.scrollTop === 0
     }
   }
 }
