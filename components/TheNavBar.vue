@@ -56,7 +56,6 @@ export default {
 
 <style lang="scss" scoped>
 $mobile-width-breakpoint: 1200px;
-
 nav {
   position: relative;
   display: flex;
@@ -115,15 +114,15 @@ nav {
   display: none;
   padding: 0 10px;
   &.nav-active {
-    $test: 8px;
+    $translate: 8px;
     .nav-burger-1 {
-      transform: translateY($test) rotate(45deg);
+      transform: translateY($translate) rotate(45deg);
     }
     .nav-burger-2 {
       opacity: 0;
     }
     .nav-burger-3 {
-      transform: translateY(-$test) rotate(-45deg);
+      transform: translateY(-$translate) rotate(-45deg);
     }
   }
 }

@@ -36,7 +36,7 @@
           {{ subTeam.name }}
         </h2>
         <div class="members">
-          <div v-for="member in subTeam.members" :key="member">
+          <div v-for="member in subTeam.members" :key="member.name">
             <h2 v-if="member.role" class="role">
               {{ member.role }}
             </h2>
