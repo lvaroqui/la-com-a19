@@ -21,7 +21,8 @@
     "nuxt": "^2.0.0",
     "nuxt-svg-loader": "^1.0.1",
     "sass-loader": "^7.1.0",
-    "vue-scroll": "^2.1.12"
+    "vue-scroll": "^2.1.12",
+    "vue-timers": "^2.0.2"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",

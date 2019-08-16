@@ -1,5 +1,6 @@
 <template>
   <div v-scroll="handleScroll" class="scroll-snap-parent">
+    <base-scroll-arrow :show="showArrow"></base-scroll-arrow>
     <div class="scroll-snap-child horizontal-flex full-page">
       <h1>La Compagnie des Lampes</h1>
     </div>
@@ -20,15 +21,19 @@
 </template>
 
 <script>
+import BaseScrollArrow from '../components/BaseScrollArrow'
 export default {
   name: 'Index',
+  components: { BaseScrollArrow },
   data() {
     return {
+      showArrow: true,
       synopsis: false
     }
   },
   methods: {
     handleScroll(event, position) {
+      this.showArrow = position.scrollTop === 0
       this.synopsis = position.scrollTop > this.$refs.synospis.offsetTop / 2
     }
   }

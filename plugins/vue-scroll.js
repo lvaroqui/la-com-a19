@@ -1,4 +1,4 @@
 import Vue from 'vue'
-import vuescroll from 'vue-scroll'
+import VueScroll from 'vue-scroll'
 
-Vue.use(vuescroll)
+Vue.use(VueScroll)
