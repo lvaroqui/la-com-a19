@@ -1,9 +1,14 @@
 <template>
-  <div class="scroll-snap-parent">
+  <div v-scroll="handleScroll" class="scroll-snap-parent">
     <div class="scroll-snap-child horizontal-flex full-page">
       <h1>La Compagnie des Lampes</h1>
     </div>
-    <div class="scroll-snap-child horizontal-flex full-page">
+    <div
+      id="synopsis"
+      ref="synospis"
+      class="scroll-snap-child horizontal-flex full-page"
+      :class="{ show: synopsis }"
+    >
       <div class="container">
         <h1>Synopsis</h1>
         <div>
@@ -14,4 +19,35 @@
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<script>
+export default {
+  name: 'Index',
+  data() {
+    return {
+      synopsis: false
+    }
+  },
+  methods: {
+    handleScroll(event, position) {
+      this.synopsis = position.scrollTop > this.$refs.synospis.offsetTop / 2
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+#synopsis {
+  background-color: $dark-grey-color;
+  & > div {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.5s ease-in;
+  }
+  &.show {
+    & > div {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+</style>
