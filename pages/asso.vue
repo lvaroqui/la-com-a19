@@ -1,5 +1,5 @@
 <template>
-  <div v-scroll="handleScroll" class="scroll-snap-parent">
+  <div>
     <base-scroll-arrow :show="showArrow"></base-scroll-arrow>
     <div class="scroll-snap-child full-page horizontal-flex">
       <div class="container">
@@ -246,9 +246,15 @@ export default {
       }
     }
   },
+  beforeMount() {
+    window.addEventListener('scroll', this.handleScroll, { passive: true })
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
   methods: {
-    handleScroll(event, position) {
-      this.showArrow = position.scrollTop === 0
+    handleScroll(event) {
+      this.showArrow = event.pageY === 0
     }
   }
 }

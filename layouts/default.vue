@@ -1,26 +1,23 @@
 <template>
-  <div class="root-container">
-    <NavBar />
-    <nuxt class="main-container" />
+  <div class="main-container">
+    <TheNavBar />
+    <nuxt />
+    <TheFooter />
   </div>
 </template>
 
 <script>
-import NavBar from './../components/TheNavBar'
+import TheNavBar from './../components/TheNavBar'
+import TheFooter from './../components/TheFooter'
 export default {
-  components: { NavBar }
+  components: { TheNavBar, TheFooter }
 }
 </script>
 
 <style lang="scss">
-.root-container {
-  overflow: hidden;
-}
-
 .main-container {
   color: white;
   width: 100%;
-  height: calc(100vh - #{$nav-height});
-  overflow-y: auto;
+  margin-top: $nav-height;
 }
 </style>
