@@ -1,5 +1,5 @@
 before_script:
-  - yarn install
+  - npm install
 
 stages:
   - deploy
@@ -13,7 +13,7 @@ deploy-test:
   tags:
     - deploy-test
   script:
-    - yarn run build
+    - npm run build
     - rsync -avz dist/ /var/www/la-com-a19/
   only:
     - develop
