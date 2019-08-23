@@ -1,8 +1,8 @@
 <template>
-  <div v-scroll="handleScroll" class="scroll-snap-parent">
+  <div>
     <base-scroll-arrow :show="showArrow"></base-scroll-arrow>
     <div class="scroll-snap-child horizontal-flex full-page">
-      <h1>La Compagnie des Lampes</h1>
+      <h1>{{ pageY }}</h1>
     </div>
     <div
       id="synopsis"
@@ -28,13 +28,21 @@ export default {
   data() {
     return {
       showArrow: true,
-      synopsis: false
+      synopsis: false,
+      pageY: 0
     }
   },
+  beforeMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
   methods: {
-    handleScroll(event, position) {
-      this.showArrow = position.scrollTop === 0
-      this.synopsis = position.scrollTop > this.$refs.synospis.offsetTop / 2
+    handleScroll(event) {
+      this.showArrow = event.pageY === 0
+      this.synopsis = event.pageY > 10
+      this.pageY = event.type
     }
   }
 }

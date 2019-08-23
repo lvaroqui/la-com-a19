@@ -57,7 +57,9 @@ export default {
 <style lang="scss" scoped>
 $mobile-width-breakpoint: 1200px;
 nav {
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
