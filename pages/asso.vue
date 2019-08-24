@@ -9,19 +9,18 @@
           <p>
             La Comédie Musicale, nommée affectueusement « La Com' » par ses
             membres, est une commission du Pôle Artistique et Événementiel de
-            l'Université de Technologie de Compiègne (<span
-              class="bold"
-              style="padding: 0 0.2em "
-              >PAE UTC</span
-            >). Créée en 1995, la Comédie Musicale est aujourd’hui un événement
+            l'Université de Technologie de Compiègne (
+            <span class="bold" style="padding: 0 0.2em">PAE UTC</span>). Créée
+            en 1995, la Comédie Musicale est aujourd’hui un événement
             incontournable de la vie associative UTCéenne.
           </p>
 
           <p>
             Présentant à ses débuts des adaptations de pièces connues (« On Ne
             Badine Pas Avec L’Amour » en 2001 par exemple), la Com’ a évolué en
-            2003 vers <span class="bold">des créations 100 % originales</span>.
-            Depuis, elle propose tous les 2 ans des comédies musicales créées
+            2003 vers
+            <span class="bold">des créations 100 % originales</span>. Depuis,
+            elle propose tous les 2 ans des comédies musicales créées
             entièrement par des étudiant·e·s qui gèrent chaque partie de cet
             immense projet :
           </p>
@@ -64,8 +63,10 @@
 </template>
 
 <script>
+import { throttle } from 'lodash'
 import BaseTeamSection from '../components/BaseTeamSection'
 import BaseScrollArrow from '../components/BaseScrollArrow'
+
 export default {
   name: 'Asso',
   components: { BaseScrollArrow, BaseTeamSection },
@@ -247,15 +248,16 @@ export default {
     }
   },
   beforeMount() {
-    window.addEventListener('scroll', this.handleScroll, { passive: true })
+    window.addEventListener(
+      'scroll',
+      throttle(() => {
+        this.showArrow = window.scrollY === 0
+      }, 500),
+      { passive: true }
+    )
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.handleScroll)
-  },
-  methods: {
-    handleScroll(event) {
-      this.showArrow = event.pageY === 0
-    }
   }
 }
 </script>

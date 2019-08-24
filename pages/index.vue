@@ -2,7 +2,7 @@
   <div>
     <base-scroll-arrow :show="showArrow"></base-scroll-arrow>
     <div class="scroll-snap-child horizontal-flex full-page">
-      <h1>{{ pageY }}</h1>
+      <h1>La Compagnie des Lampes</h1>
     </div>
     <div
       id="synopsis"
@@ -21,29 +21,30 @@
 </template>
 
 <script>
+import { throttle } from 'lodash'
 import BaseScrollArrow from '../components/BaseScrollArrow'
+
 export default {
   name: 'Index',
   components: { BaseScrollArrow },
   data() {
     return {
       showArrow: true,
-      synopsis: false,
-      pageY: 0
+      synopsis: false
     }
   },
   beforeMount() {
-    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener(
+      'scroll',
+      throttle(() => {
+        this.showArrow = window.scrollY === 0
+        this.synopsis = window.scrollY > this.$refs.synospis.offsetTop / 2
+      }, 500),
+      { passive: true }
+    )
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.handleScroll)
-  },
-  methods: {
-    handleScroll(event) {
-      this.showArrow = event.pageY === 0
-      this.synopsis = event.pageY > 10
-      this.pageY = event.type
-    }
   }
 }
 </script>
