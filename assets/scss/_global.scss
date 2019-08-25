@@ -33,12 +33,14 @@ body {
 .full-page {
   width: 100%;
   min-height: calc(100vh - #{$nav-height});
+  overflow: hidden;
 }
 
 .horizontal-flex {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .vertical-flex {
