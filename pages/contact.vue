@@ -28,12 +28,18 @@
         </div>
       </div>
     </div>
+    <Parallax
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Parque_Eagle_River%2C_Anchorage%2C_Alaska%2C_Estados_Unidos%2C_2017-09-01%2C_DD_02.jpg/1280px-Parque_Eagle_River%2C_Anchorage%2C_Alaska%2C_Estados_Unidos%2C_2017-09-01%2C_DD_02.jpg"
+      height="300px"
+    />
   </div>
 </template>
 
 <script>
+import Parallax from '../components/BaseParallaxPicture'
 export default {
-  name: 'Contact'
+  name: 'Contact',
+  components: { Parallax }
 }
 </script>
 
