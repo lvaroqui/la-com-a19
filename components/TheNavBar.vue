@@ -97,11 +97,6 @@ nav {
   }
 }
 
-.nav-links-mobile {
-  justify-content: space-around;
-  width: 45%;
-}
-
 .nav-links li,
 .nav-links-mobile li {
   list-style: none;
@@ -153,7 +148,8 @@ nav {
 
 $nav-mobile-menu-height: 250px;
 .nav-links-mobile {
-  position: absolute;
+  justify-content: space-around;
+  position: fixed;
   height: $nav-mobile-menu-height;
   top: $nav-height;
   background-color: darken($intermediate-color, 10);
