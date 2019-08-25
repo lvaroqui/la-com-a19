@@ -21,7 +21,7 @@
       </div>
     </nav>
     <ul class="nav-links-mobile" :class="{ 'nav-active': isActive }">
-      <li v-for="item in items" :key="item.id" class="" @click="toggleNav">
+      <li v-for="item in items" :key="item.id" class @click="toggleNav">
         <BaseNavBarElement :text="item.text" :to="item.to" />
       </li>
     </ul>
@@ -41,7 +41,7 @@ export default {
         { id: 1, text: "L'asso", to: '/asso' },
         { id: 2, text: 'Partenaires', to: '/partenaires' },
         { id: 3, text: 'Billetterie', to: '/billetterie' },
-        { id: 4, text: 'Archives', to: '/archives' }
+        { id: 4, text: 'Contact', to: '/contact' }
       ],
       isActive: false
     }
