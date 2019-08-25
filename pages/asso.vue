@@ -252,16 +252,19 @@ export default {
     }
   },
   beforeMount() {
-    window.addEventListener(
-      'scroll',
-      throttle(() => {
-        this.showArrow = window.scrollY === 0
-      }, 500),
-      { passive: true }
-    )
+    window.addEventListener('scroll', this.onScroll, {
+      passive: true
+    })
   },
   beforeDestroy() {
-    window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('scroll', this.onScroll, {
+      passive: true
+    })
+  },
+  methods: {
+    onScroll: throttle(function() {
+      this.showArrow = window.scrollY === 0
+    }, 500)
   }
 }
 </script>
