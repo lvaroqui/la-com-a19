@@ -46,6 +46,7 @@
         </div>
       </div>
     </div>
+    <Parallax :src="DanseImage" height="300px" />
     <div class="scroll-snap-child full-page team">
       <h1 class="center-text" style="padding: 25px 0; font-size: 2.5em">
         L'équipe
@@ -66,12 +67,15 @@
 import { throttle } from 'lodash'
 import BaseTeamSection from '../components/BaseTeamSection'
 import BaseScrollArrow from '../components/BaseScrollArrow'
+import Parallax from '../components/BaseParallaxPicture'
+import DanseImage from '~/assets/img/Danse1.jpg'
 
 export default {
   name: 'Asso',
-  components: { BaseScrollArrow, BaseTeamSection },
+  components: { BaseScrollArrow, BaseTeamSection, Parallax },
   data() {
     return {
+      DanseImage: DanseImage,
       showArrow: true,
       bureau: {
         resps: [
