@@ -13,7 +13,15 @@
       <div class="container">
         <h1>Synopsis</h1>
         <div>
-          <p>Ceci est un super Synopsis détaillé mais pas trop de la Com'.</p>
+          <p>
+            Raphaëll divague dans les rues du centre prospère d'une ville-monde.
+            Les Périphériques fuient le smog qui les rend malades. Mohéa, elle,
+            tente d'alerter médias et pouvoirs publics en criant la vérité d'une
+            périphérie qui meurt sous ce brouillard toxique. Amenant avec elle
+            les plus malades, elle croise la route de Raphaëll, Suzanne et
+            Arsène. Tandis que les questions s'accumulent, le Smog se resserre
+            autour du centre-ville.
+          </p>
         </div>
       </div>
     </div>
