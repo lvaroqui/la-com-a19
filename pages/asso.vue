@@ -9,9 +9,11 @@
           <p>
             La Comédie Musicale, nommée affectueusement « La Com' » par ses
             membres, est une commission du Pôle Artistique et Événementiel de
-            l'Université de Technologie de Compiègne (
-            <span class="bold" style="padding: 0 0.2em">PAE UTC</span>). Créée
-            en 1995, la Comédie Musicale est aujourd’hui un événement
+            l'Université de Technologie de Compiègne (<span
+              class="bold"
+              style="padding: 0 0.2em"
+              >PAE UTC</span
+            >). Créée en 1995, la Comédie Musicale est aujourd’hui un événement
             incontournable de la vie associative UTCéenne.
           </p>
 
