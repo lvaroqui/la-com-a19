@@ -35,7 +35,7 @@
             <li>
               Côté organisation, il s’agit de s’occuper de la promotion, de la
               communication, du sponsoring, de la trésorerie, ou encore de la
-              gestion gestion et du management de toute cette belle équipe.
+              gestion et du management de toute cette belle équipe.
             </li>
           </ul>
           <p>
