@@ -4,8 +4,7 @@
     <div class="full-page horizontal-flex">
       <div class="container">
         <h1>La Com' c'est quoi ?</h1>
-
-        <div>
+        <div class="text-font">
           <p>
             La Comédie Musicale, nommée affectueusement « La Com' » par ses
             membres, est une commission du Pôle Artistique et Événementiel de
