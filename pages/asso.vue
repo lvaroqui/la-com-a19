@@ -1,7 +1,7 @@
 <template>
   <div>
     <base-scroll-arrow :show="showArrow"></base-scroll-arrow>
-    <div class="scroll-snap-child full-page horizontal-flex">
+    <div class="full-page horizontal-flex">
       <div class="container">
         <h1>La Com' c'est quoi ?</h1>
 
@@ -70,14 +70,14 @@ import { throttle } from 'lodash'
 import BaseTeamSection from '../components/BaseTeamSection'
 import BaseScrollArrow from '../components/BaseScrollArrow'
 import Parallax from '../components/BaseParallaxPicture'
-import DanseImage from '~/assets/img/Danse1.jpg'
+import DanseImage from '~/assets/img/danse1.jpg'
 
 export default {
   name: 'Asso',
   components: { BaseScrollArrow, BaseTeamSection, Parallax },
   data() {
     return {
-      DanseImage: DanseImage,
+      DanseImage,
       showArrow: true,
       bureau: {
         resps: [

@@ -1,5 +1,5 @@
 <template>
-  <div class="scroll-snap-child horizontal-flex section">
+  <div class="horizontal-flex section">
     <div class="container">
       <h1 class="center-text" style="font-size: 2em">
         {{ name }}

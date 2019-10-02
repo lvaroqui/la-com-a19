@@ -84,6 +84,7 @@ nav {
 .nav-logo {
   height: 70px;
   width: 70px;
+  padding: 5px 0;
 }
 
 .nav-links {

@@ -1,13 +1,13 @@
 <template>
   <div>
     <base-scroll-arrow :show="showArrow"></base-scroll-arrow>
-    <div class="scroll-snap-child horizontal-flex full-page">
+    <div class="horizontal-flex full-page">
       <h1>La Compagnie des Lampes</h1>
     </div>
     <div
       id="synopsis"
       ref="synospis"
-      class="scroll-snap-child horizontal-flex full-page"
+      class="horizontal-flex full-page"
       :class="{ show: synopsis }"
     >
       <div class="container">

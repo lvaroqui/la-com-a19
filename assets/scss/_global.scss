@@ -11,7 +11,6 @@ html {
   text-shadow: 2px 2px 2px black;
   height: 100vh;
   overflow-y: scroll;
-  scroll-snap-type: y proximity;
 }
 
 body {
@@ -61,11 +60,6 @@ body {
   @include xl {
     width: 65%;
   }
-}
-
-.scroll-snap-child {
-  scroll-snap-align: start;
-  scroll-margin: $nav-height;
 }
 
 p {
