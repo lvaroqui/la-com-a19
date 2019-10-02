@@ -24,7 +24,6 @@ footer {
   background-color: darken($dark-grey-color, 5);
   width: 100%;
   padding: 1em;
-  scroll-snap-align: end;
 }
 
 .element {

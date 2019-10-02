@@ -4,7 +4,9 @@
       `height: ${height};
         background-image: url('${src}');
         background-attachment: fixed;
-        background-size: cover;`
+        background-size: cover;
+        background-position-y: top 30px;
+        `
     "
   />
 </template>
