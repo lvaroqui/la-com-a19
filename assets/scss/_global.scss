@@ -25,6 +25,19 @@ body {
   src: url('~assets/fonts/OldNewspaperTypes.ttf');
 }
 
+@font-face {
+  font-family: TextFont;
+  src: url('~assets/fonts/Timeless.ttf');
+}
+
+p {
+  margin: 8px 0;
+}
+
+.text-font {
+  font-family: TextFont;
+}
+
 .bold {
   font-weight: bolder;
 }

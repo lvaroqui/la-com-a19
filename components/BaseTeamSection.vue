@@ -85,9 +85,6 @@ export default {
   color: #b4b4b4;
 }
 
-.name {
-}
-
 .members {
   display: flex;
   align-items: center;
