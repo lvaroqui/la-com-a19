@@ -56,6 +56,7 @@
       <base-team-section name="Team Communication" :members="teamCom" />
       <base-team-section name="Team Log/Events" :members="teamOrga" />
       <base-team-section name="Team Déco" :members="teamDeco" />
+      <base-team-section name="Team Déco" :members="teamCostumes" />
       <base-team-section name="Team Théatre" :members="teamTheatre" />
       <base-team-section name="Musique" :members="teamMusique" />
       <base-team-section name="Danse" :members="teamDance" />
@@ -81,10 +82,10 @@ export default {
       bureau: {
         resps: [
           { role: "Prez'", name: 'Calista Richard' },
-          { role: 'Vice Président', name: 'Cédric Dussaut' },
-          { role: 'Vice Présidente', name: 'Selma Leonardi' },
+          { role: 'Vice Président', name: 'Quentin Stauder' },
+          { role: 'Vice Président', name: 'Hugo Ollier' },
           { role: 'Trésorier', name: 'Victor Tondolo' },
-          { role: 'Trésorier', name: 'Quentin Stauder' },
+          { role: 'Trésorière', name: 'Anaïs Sogno' },
           { role: 'Secrétaire', name: 'Victor Ronfaut' }
         ]
       },
@@ -98,38 +99,66 @@ export default {
           { role: 'Graphiste', name: 'Emma Bidault' }
         ],
         subTeams: [
-          { name: 'Les Membres', members: [{ name: 'Sebastian Balanta' }] }
+          {
+            name: 'Les Membres',
+            members: [{ name: 'Heloïse Eliet' }, { name: 'Melissa Mimouni' }]
+          }
         ]
       },
       teamOrga: {
         resps: [
-          { role: "Resp' Events", name: 'Elodie Martinaud' },
+          { role: "Resp' Events", name: 'Alix Levrault' },
           { role: "Resp' Log", name: 'Merwan Bouvier' }
         ],
         subTeams: [
           {
             name: 'Les Membres',
-            members: [{ name: 'Alix Levrault' }, { name: 'Cyrielle Debeir' }]
+            members: [
+              { name: 'Amelie Lagoria' },
+              { name: 'Cyrielle Debeir' },
+              { name: 'Domitille Foucault' },
+              { name: 'Oubine Perrin' }
+            ]
           }
         ]
       },
       teamDeco: {
         resps: [
-          { role: "Resp' Déco", name: 'Laure Margerand' },
-          { role: "Resp' Déco", name: 'Sibylle Lebert' }
+          { role: "Resp' Déco", name: 'Lauriane Esther' },
+          { role: "Resp' Déco", name: 'Camille Apert' }
         ],
         subTeams: [
           {
             name: 'Les Membres',
             members: [
-              { name: 'Alexia	Le Gall' },
-              { name: 'Corentin	Carrée' },
-              { name: 'Cloé	Bigaux' },
-              { name: 'Lauriane	Esther' },
-              { name: 'Camille	Apert' },
-              { name: 'Cheng	Ruochong' },
-              { name: 'Fanny	Bourgeois' },
-              { name: 'Anaïs	Latge' }
+              { name: 'Amélie Lagorio' },
+              { name: 'Anaïs Sogno' },
+              { name: 'Apolline Brisson' },
+              { name: 'Camille Chartier' },
+              { name: 'Cheng Ruochong' },
+              { name: 'Corentin Carrée' },
+              { name: 'Emma Bonte' },
+              { name: 'Fanny Bourgeois' },
+              { name: 'Jade Scarmoncin' },
+              { name: 'Laurene Coyen' },
+              { name: 'Lucie Deronzier' },
+              { name: 'Marie Lecorguille' },
+              { name: 'Matéo Estrade ' }
+            ]
+          }
+        ]
+      },
+      teamCostumes: {
+        resps: [{ role: "Resp' Costumes", name: 'Sibylle Lebert' }],
+        subTeams: [
+          {
+            name: 'Les Membres',
+            members: [
+              { name: 'Anaïs Latge' },
+              { name: 'Elise Helfer' },
+              { name: 'Fanny Bourgeois' },
+              { name: 'Lilou Babinet' },
+              { name: 'Oubine Perrin' }
             ]
           }
         ]
@@ -140,21 +169,54 @@ export default {
           {
             name: 'Compositeurs',
             members: [
-              { name: 'Cédric	Dussaut' },
-              { name: 'Rémy	Huet' },
-              { name: 'Rindra	Rabiaza' },
-              { name: 'Romain	Maliach' },
-              { name: 'Salomé	Wanty' },
-              { name: 'Selma	Leonardi' },
-              { name: 'Thomas	Lécluse' },
-              { name: 'Marie	Margerand' },
-              { name: 'Simon	Devauchelle' },
-              { name: 'Victor	Ronfaut' },
-              { name: 'Matthieu	Decaux' },
-              { name: 'Hugo	Ollier' },
-              { name: 'Marianne	Guesneau' },
-              { name: 'Felix	Courades' },
-              { name: 'Laura	Hénin' }
+              { name: 'Cédric Dussaut' },
+              { name: 'Felix Courades' },
+              { name: 'Hugo Ollier' },
+              { name: 'Laura Hénin' },
+              { name: 'Marianne Guesneau' },
+              { name: 'Marie Margerand' },
+              { name: 'Matthieu Decaux' },
+              { name: 'Rémy Huet' },
+              { name: 'Rindra Rabiaza' },
+              { name: 'Romain Maliach' },
+              { name: 'Salomé Wanty' },
+              { name: 'Selma Leonardi' },
+              { name: 'Simon Devauchelle' },
+              { name: 'Thomas Lécluse' },
+              { name: 'Victor Ronfaut' }
+            ]
+          },
+          {
+            name: 'Musiciens',
+            members: [
+              { name: 'Laureline Geirnaert', role: 'Flûte' },
+              { name: 'Solène Stoens', role: 'Flûte' },
+              { name: 'Elouan Wauquier', role: 'Hautbois' },
+              { name: 'Julie Cotte', role: 'Clarinette' },
+              { name: 'Victor Ronfaut', role: 'Clarinette' },
+              { name: 'Hugo Ollier', role: 'Sax' },
+              { name: 'Théo Duchateau', role: 'Cor' },
+              { name: 'Maxime Richard', role: 'Trompette' },
+              { name: 'Thomas Lécluse', role: 'Trompette' },
+              { name: 'Narjisse Boulekras', role: 'Trombone' },
+              { name: 'Rémy Ploix', role: 'Euphonium' },
+              { name: 'Thomas Heyligen', role: 'Tuba' },
+              { name: 'Louanne Bertrand', role: 'Percu' },
+              { name: 'Matthieu Decaux', role: 'Percu' },
+              { name: 'Alexandre Berthet', role: 'Batteur' },
+              { name: 'Aurélie Law-Yen', role: 'Violon' },
+              { name: 'Diego Mejia', role: 'Violon' },
+              { name: 'Emile Kubler', role: 'Violon' },
+              { name: 'Rémy Huet', role: 'Violon' },
+              { name: 'Romain Mallard', role: 'Violon' },
+              { name: 'Simon Devauchelle', role: 'Violon' },
+              { name: 'Selma Leonardi', role: 'Violon' },
+              { name: 'Carole Ramdame', role: 'Alto' },
+              { name: 'Clément Aronica', role: 'Alto' },
+              { name: 'Line Mardini', role: 'Alto' },
+              { name: 'Anouk Chômienne', role: 'Violoncelle ' },
+              { name: 'Eugène Pin', role: 'Violoncelle ' },
+              { name: 'Salomé  Wanty', role: 'Violoncelle ' }
             ]
           }
         ]
@@ -168,21 +230,21 @@ export default {
         subTeams: [
           {
             name: 'Assistants mise en scène',
-            members: [{ name: 'Camille	Rochelet' }, { name: 'Clément	Vadaine' }]
+            members: [{ name: 'Clément	Vadaine' }]
           },
           {
             name: 'Acteurs',
             members: [
-              { name: 'Simon	Cattez', role: 'Technicien' },
-              { name: 'Florence	Cupessala', role: 'Suzanne' },
-              { name: 'Cyrielle	Debeir', role: 'Raphaëlle' },
-              { name: 'Anaël	Lacour', role: 'Journaliste' },
-              { name: 'Anthony	Le Breton', role: 'Arsène' },
-              { name: 'Ismaël	Maayoufi', role: 'Mr. Pipe' },
               { name: 'Céleste	Moudileno', role: 'Mohéa' },
-              { name: 'Théo	Pezin', role: 'Radio ' },
-              { name: 'Elise	Pinard', role: 'Chanteuse cabaret/PDG' },
-              { name: 'David	Solis', role: 'Maire' },
+              { name: 'Anthony	Le Breton', role: 'Arsène' },
+              { name: 'Cyrielle	Debeir', role: 'Raphaëll' },
+              { name: 'Florence	Cupessala', role: 'Suzanne' },
+              { name: 'David	Solis', role: 'Le Maire' },
+              { name: 'Ismaël	Maayoufi', role: 'Mr. Pipe' },
+              { name: 'Anaël	Lacour', role: 'Le Journaliste' },
+              { name: 'Simon	Cattez', role: 'Le Technicien' },
+              { name: 'Elise	Pinard', role: 'Chanteuse du cabaret et PDG' },
+              { name: 'Théo	Pezin', role: 'La Radio' },
               { name: 'Marion	Voisin', role: 'Journaliste 1' },
               { name: 'Marianne	Guesneau', role: 'Journaliste 2' }
             ]
@@ -198,54 +260,74 @@ export default {
           {
             name: 'Danseurs',
             members: [
-              { name: 'Valentine Verschelde' },
-              { name: 'Marion Voisin' },
-              { name: 'Julie Hong' },
+              { name: 'Alix Levrault' },
               { name: 'Anne-Laure Caminade' },
-              { name: 'Marianne Guesneau' },
-              { name: 'Célia Yota' },
-              { name: 'Caroline Werlé' },
-              { name: 'Lola Daboussy' },
-              { name: 'Emma Faivre-Duboz' },
-              { name: 'Camille Beaudou' },
-              { name: 'ChloéGrippi' },
               { name: 'Bérengère Lanneau' },
-              { name: 'Marine ERASMUS' },
-              { name: 'Maud Ondet' },
-              { name: 'Sebastian Balanta' },
-              { name: 'Sarah Dubus' },
-              { name: 'Romain Maliach-Auguste' },
-              { name: 'Miora Layari' },
-              { name: 'Mélina Gauthier' },
-              { name: 'Ombeline Lheureux' },
+              { name: 'Caroline Werlé' },
+              { name: 'Chloé Grippi' },
               { name: 'Clara Balmisse' },
-              { name: 'Renaud Voisin' }
+              { name: 'Elwynn Neglokpe' },
+              { name: 'Emma Faivre-Duboz' },
+              { name: 'Jade Lecerf' },
+              { name: 'Julie Hong' },
+              { name: 'Léonie Challant' },
+              { name: 'Lola Daboussy' },
+              { name: 'Marianne Guesneau' },
+              { name: 'Marine Viegas' },
+              { name: 'Marion Voisin' },
+              { name: 'Maud Ondet' },
+              { name: 'Ombeline Lheureux' },
+              { name: 'Renaud Voisin' },
+              { name: 'Romain Maliach-Auguste' },
+              { name: 'Sarah Dubus' },
+              { name: 'Sebastian Balanta' },
+              { name: 'Valentine Delrieu' },
+              { name: 'Valentine Verschelde' }
             ]
           }
         ]
       },
       teamChant: {
-        resps: [{ role: "Resp' Chant", name: 'Felana Ramiliariniaina' }],
+        resps: [
+          { role: "Resp' Chant", name: 'Felana Ramiliariniaina' },
+          { role: "Resp' Paroles", name: 'Perrine Malchair' }
+        ],
         subTeams: [
+          {
+            name: 'Paroliers',
+            members: [
+              { name: 'Daniel Duthoit' },
+              { name: 'Elvire Beyret' },
+              { name: 'Elise Mozin' },
+              { name: 'Marion Voisin' }
+            ]
+          },
           {
             name: 'Choeurs',
             members: [
-              { name: 'Valentine	Verschelde' },
-              { name: 'Romain	Maliach' },
-              { name: 'Basile	Sugranes' },
-              { name: 'Julie	Hong' },
-              { name: 'Mélina	Gauthier' },
-              { name: 'Anne-Laure	Caminade' },
-              { name: 'Caroline	Werle' },
-              { name: 'Maria	Al Bejjani' },
-              { name: 'Celia	Yota' },
-              { name: 'Cécile	Forestier' },
-              { name: 'Juliette	Vanneuville' },
-              { name: 'Miora	Laiarinandrasana' },
-              { name: 'Aurore	Allard' },
-              { name: 'Hugo	Malet' },
-              { name: 'Etienne	Morambert' },
-              { name: 'Daniel	Duthoit' }
+              { name: 'Anne-Laure Caminade' },
+              { name: 'Anthony Le Breton' },
+              { name: 'Basile Sugranes' },
+              { name: 'Caroline Werle' },
+              { name: 'Cécile Forestier' },
+              { name: 'Celeste Moudileno' },
+              { name: 'Célia Yota' },
+              { name: 'Clotilde Douville De Franssu' },
+              { name: 'Cyrielle Debier' },
+              { name: 'Elise Pinard' },
+              { name: 'Etienne Morambert' },
+              { name: 'Florence Cupessala' },
+              { name: 'Ismaël Maayoufi' },
+              { name: 'Julie Hong' },
+              { name: 'Juliette Vanneuville' },
+              { name: 'Lea Louvion' },
+              { name: 'Marianne Guesneau' },
+              { name: 'Marion Voisin' },
+              { name: 'Maxence Valet' },
+              { name: 'Miora Laiarinandrasana' },
+              { name: 'Romain Maliach' },
+              { name: 'Simon Cattez' },
+              { name: 'Valentine Verschelde' }
             ]
           }
         ]

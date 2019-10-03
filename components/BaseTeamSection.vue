@@ -31,7 +31,11 @@
           </h3>
         </div>
       </div>
-      <div v-for="subTeam in members.subTeams" :key="subTeam.name">
+      <div
+        v-for="subTeam in members.subTeams"
+        :key="subTeam.name"
+        style="margin-bottom: 1em"
+      >
         <h2 class="center-text">
           {{ subTeam.name }}
         </h2>
