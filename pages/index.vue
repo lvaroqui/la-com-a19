@@ -1,6 +1,9 @@
 <template>
-  <div>
+  <div id="wrapper">
     <div id="affiche" class="full-page" style="position: relative;">
+      <div class="stars small"></div>
+      <div class="stars medium"></div>
+      <div class="stars large"></div>
       <img id="sol" src="~/assets/img/affiche/sol.png" />
       <img id="lampadaire" src="~/assets/img/affiche/lampadaire.png" />
       <img id="titre" src="~/assets/img/affiche/titre.png" />
@@ -63,10 +66,50 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@function box-shadow($stars) {
+  $bxshadow: ();
+  @for $i from 1 to $stars {
+    $bxshadow: append(
+      $bxshadow,
+      (random(2000) - 0px) (random(2000) - 100px) #fff,
+      comma
+    );
+  }
+  @return unquote($bxshadow);
+}
+
+$bxshadow-large: box-shadow(300);
+$bxshadow-medium: box-shadow(500);
+$bxshadow-small: box-shadow(800);
+
+.stars.large {
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  box-shadow: $bxshadow-large;
+  animation: blink-large 7s infinite;
+}
+.stars.medium {
+  height: 2px;
+  width: 2px;
+  background: transparent;
+  box-shadow: $bxshadow-medium;
+  animation: blink-medium 5s infinite;
+}
+.stars.small {
+  height: 1px;
+  width: 1px;
+  background: transparent;
+  box-shadow: $bxshadow-small;
+  animation: blink-small 3s infinite;
+}
+
+#wrapper {
+  overflow: hidden;
+}
 #synopsis {
   width: 120%;
   margin-left: -10%;
-  overflow: hidden;
   box-shadow: 0 -50px 50px $dark-grey-color;
   background-color: $dark-grey-color;
   transform: translateY(0);
@@ -78,15 +121,19 @@ export default {
 }
 
 #affiche {
-  margin-top: 100px;
+  padding-top: 100px;
+  background: radial-gradient(
+    ellipse at bottom,
+    rgb(9, 45, 66) 0%,
+    rgb(0, 22, 34) 100%
+  );
 }
 
 #titre {
   $width: 35%;
-  top: -1%;
   position: absolute;
   width: $width;
-  margin: 0 auto;
+  margin: -100px auto 0 auto;
   left: calc(50% - #{$width} / 2);
 }
 
@@ -256,6 +303,87 @@ export default {
     padding-bottom: 25%;
     bottom: 0;
     left: calc(50% - #{$width} / 2);
+  }
+}
+
+@media screen and (max-width: 290px) {
+  #sol {
+    $width: 150%;
+    width: $width;
+    bottom: 0px;
+    left: calc(50% - #{$width} / 2);
+  }
+
+  #lampadaire {
+    $width: 40%;
+    width: $width;
+    padding-bottom: 25%;
+    bottom: 0;
+    left: calc(50% - #{$width} / 2);
+  }
+}
+
+@keyframes blink-large {
+  0% {
+    box-shadow: $bxshadow-large;
+  }
+  70% {
+    $colors: '#fff', 'transparent';
+    $stars: $bxshadow-large;
+    @for $i from 1 to length($stars) {
+      $star: set-nth(
+        nth($stars, $i),
+        3,
+        unquote(nth($colors, random(length($colors))))
+      );
+      $stars: set-nth($stars, $i, $star);
+    }
+    box-shadow: $stars;
+  }
+  100% {
+    box-shadow: $bxshadow-large;
+  }
+}
+@keyframes blink-medium {
+  0% {
+    box-shadow: $bxshadow-medium;
+  }
+  70% {
+    $colors: '#fff', 'transparent';
+    $stars: $bxshadow-medium;
+    @for $i from 1 to length($stars) {
+      $star: set-nth(
+        nth($stars, $i),
+        3,
+        unquote(nth($colors, random(length($colors))))
+      );
+      $stars: set-nth($stars, $i, $star);
+    }
+    box-shadow: $stars;
+  }
+  100% {
+    box-shadow: $bxshadow-medium;
+  }
+}
+@keyframes blink-small {
+  0% {
+    box-shadow: $bxshadow-small;
+  }
+  70% {
+    $colors: '#fff', 'transparent';
+    $stars: $bxshadow-small;
+    @for $i from 1 to length($stars) {
+      $star: set-nth(
+        nth($stars, $i),
+        3,
+        unquote(nth($colors, random(length($colors))))
+      );
+      $stars: set-nth($stars, $i, $star);
+    }
+    box-shadow: $stars;
+  }
+  100% {
+    box-shadow: $bxshadow-small;
   }
 }
 </style>
