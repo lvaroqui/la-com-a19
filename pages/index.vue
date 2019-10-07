@@ -11,18 +11,20 @@
     </div>
     <base-scroll-arrow :show="showArrow"></base-scroll-arrow>
     <div id="synopsis" ref="synospis" class="horizontal-flex full-page">
-      <div class="container">
-        <h1>Synopsis</h1>
-        <div class="text-font">
-          <p>
-            Raphaëll divague dans les rues du centre prospère d'une ville-monde.
-            Les Périphériques fuient le smog qui les rend malades. Mohéa, elle,
-            tente d'alerter médias et pouvoirs publics en criant la vérité d'une
-            périphérie qui meurt sous ce brouillard toxique. Amenant avec elle
-            les plus malades, elle croise la route de Raphaëll, Suzanne et
-            Arsène. Tandis que les questions s'accumulent, le Smog se resserre
-            autour du centre-ville.
-          </p>
+      <div id="synopsis-child">
+        <div class="container">
+          <h1>Synopsis</h1>
+          <div class="text-font">
+            <p>
+              Raphaëll divague dans les rues du centre prospère d'une
+              ville-monde. Les Périphériques fuient le smog qui les rend
+              malades. Mohéa, elle, tente d'alerter médias et pouvoirs publics
+              en criant la vérité d'une périphérie qui meurt sous ce brouillard
+              toxique. Amenant avec elle les plus malades, elle croise la route
+              de Raphaëll, Suzanne et Arsène. Tandis que les questions
+              s'accumulent, le Smog se resserre autour du centre-ville.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -61,9 +63,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#synopsis {
+  width: 120%;
+  margin-left: -10%;
+  overflow: hidden;
+  box-shadow: 0 -50px 50px $dark-grey-color;
+  background-color: $dark-grey-color;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+#synopsis-child {
+  width: 80vw;
+}
+
+#affiche {
+  margin-top: 100px;
+}
+
 #titre {
   $width: 35%;
-  top: 1%;
+  top: -1%;
   position: absolute;
   width: $width;
   margin: 0 auto;
@@ -110,7 +130,7 @@ export default {
   $width: 10%;
   width: $width;
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   left: calc(50% - #{$width} / 2);
 }
 
@@ -237,11 +257,5 @@ export default {
     bottom: 0;
     left: calc(50% - #{$width} / 2);
   }
-}
-
-#synopsis {
-  background-color: $dark-grey-color;
-  transform: translateY(0);
-  opacity: 1;
 }
 </style>

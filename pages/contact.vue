@@ -1,5 +1,5 @@
 <template>
-  <div class="full-page">
+  <div class="full-page contact">
     <h1 class="center-text title">Contact</h1>
     <h3 class="center-text" style="padding: 0 1em;">
       N'hésitez pas à nous contacter pour tout renseignement par mail ou par
@@ -9,11 +9,11 @@
       <div class="contact-way">
         <div class="flex v-center">
           <img src="~/assets/img/email.png" />
-          <a href="mailto:comedmus@gmail.com">comedmus@gmail.com</a>
+          <a href="mailto:comedmus@assos.utc.fr">comedmus@assos.utc.fr</a>
         </div>
         <div class="flex v-center">
           <img src="~/assets/img/facebook.png" />
-          <a href="https://www.facebook.com/lacom.utc">Facebook</a>
+          <a href="https://www.facebook.com/comedmus/">Facebook</a>
         </div>
       </div>
       <div class="contact-way flex v-center">
@@ -47,6 +47,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.contact {
+  background-color: $dark-grey-color;
+}
+
 .title {
   margin: 1em 0 1em 0;
   font-size: 2.5em;

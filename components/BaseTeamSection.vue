@@ -12,15 +12,9 @@
           class="vertical-flex"
         >
           <img
-            v-if="resp.img"
+            v-if="!resp.noImg"
             class="picture"
-            :src="resp.img"
-            :alt="resp.name"
-          />
-          <img
-            v-else
-            class="picture"
-            src="http://placehold.it/120"
+            :src="`/trombi/${resp.name.toLowerCase().replace(' ', '_')}.jpg`"
             :alt="resp.name"
           />
           <h2 class="center-text role">
@@ -87,6 +81,10 @@ export default {
 
 .role {
   color: #b4b4b4;
+}
+
+.name {
+  font-family: TextFont;
 }
 
 .members {

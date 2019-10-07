@@ -1,5 +1,5 @@
 <template>
-  <footer class="center-text">
+  <footer class="center-text text-font">
     <div class="element">© Tous droits reservés - La Comédie Musicale 2019</div>
     <div class="element">
       Graphismes :
@@ -24,6 +24,7 @@ footer {
   background-color: darken($dark-grey-color, 5);
   width: 100%;
   padding: 1em;
+  font-size: 1 em;
 }
 
 .element {
