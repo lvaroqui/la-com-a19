@@ -9,7 +9,8 @@
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "eslint-check": "eslint --print-config .js | eslint-config-prettier-check",
     "dev": "nuxt --hostname 0.0.0.0",
-    "build": "nuxt build",
+    "build": "NODE_ENV=dev nuxt build",
+    "build-test": "IS_DEVELOP=true nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
@@ -18,7 +19,7 @@
     "gsap": "^2.1.3",
     "lodash": "^4.17.15",
     "node-sass": "^4.12.0",
-    "nuxt": "^2.0.0",
+    "nuxt": "2.9.0",
     "nuxt-svg-loader": "^1.0.1",
     "sass-loader": "^7.1.0",
     "vue-timers": "^2.0.2"
