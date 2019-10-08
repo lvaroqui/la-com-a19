@@ -232,8 +232,8 @@ export default {
       },
       teamTheatre: {
         resps: [
-          { role: 'Scribe', name: 'Camille Beaudou' },
           { role: 'Metteuse en scène', name: 'Elise Charlet' },
+          { role: 'Scribe', name: 'Camille Beaudou' },
           { role: 'Scribe', name: 'Aurélien	Beranger ', noImg: true }
         ],
         subTeams: [
@@ -305,6 +305,9 @@ export default {
           {
             name: 'Paroliers',
             members: [
+              { name: 'Aurélien Béranger' },
+              { name: 'Camille Beaudou' },
+              { name: 'Cédric Dussaut' },
               { name: 'Daniel Duthoit' },
               { name: 'Elvire Beyret' },
               { name: 'Elise Mozin' },
