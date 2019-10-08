@@ -13,7 +13,7 @@ deploy-test:
   tags:
     - deploy-test
   script:
-    - npm run build
+    - npm run build-test
     - rsync -avz dist/ /var/www/la-com-a19/
   only:
     - develop

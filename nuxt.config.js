@@ -1,3 +1,6 @@
+const prod = process.env.NODE_ENV === 'production'
+const isDevelop = process.env.IS_DEVELOP
+
 export default {
   mode: 'spa',
   /*
@@ -19,6 +22,9 @@ export default {
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+  },
+  router: {
+    base: !isDevelop && prod ? '/comedmus/2019/' : '/'
   },
   /*
    ** Customize the progress-bar color
