@@ -67,6 +67,26 @@ export default {
 }
 </script>
 
+<style>
+#Lumiere {
+  fill: url(#grad1);
+}
+
+.lampadaire-glow {
+  animation: lampadaireGlow ease 2.5s alternate infinite;
+  filter: url(#softGlowLampadaire1);
+}
+
+@keyframes lampadaireGlow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+</style>
+
 <style lang="scss" scoped>
 $top-offset: 0px;
 
@@ -123,14 +143,16 @@ $top-offset: 0px;
 }
 
 #lampadaire {
-  width: 70%;
+  width: 65%;
   margin: 0 auto;
   display: block;
   @include screen-max-width(500px) {
     width: 315px;
+  }
+  @include screen-max-width(300px) {
+    width: 100%;
     position: absolute;
-    top: 310px;
-    left: calc(50% - 315px / 2);
+    bottom: -800px;
   }
 }
 
