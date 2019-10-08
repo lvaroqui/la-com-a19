@@ -110,10 +110,11 @@ export default {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 25px;
   & > div {
     margin: 15px 10px;
 
-    height: 220px;
+    max-height: 220px;
     width: 100%;
     @include sm {
       width: 45%;
