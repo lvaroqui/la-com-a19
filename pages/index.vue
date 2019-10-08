@@ -141,12 +141,38 @@ $top-offset: 0px;
   @include screen-max-width(800px) {
     right: 35%;
   }
+  animation: move-nuage-gauche ease-in-out 5s -1s infinite;
+}
+
+@keyframes move-nuage-gauche {
+  0% {
+    transform: translateX(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateX(-15px) rotate(0.2deg);
+  }
+  100% {
+    transform: translateX(0px) rotate(0deg);
+  }
 }
 
 #nuage_droite {
   position: absolute;
   top: 10%;
   left: 60%;
+  animation: move-nuage-droite ease-in-out 5s infinite;
+}
+
+@keyframes move-nuage-droite {
+  0% {
+    transform: translateX(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateX(15px) rotate(0.2deg);
+  }
+  100% {
+    transform: translateX(0px) rotate(0deg);
+  }
 }
 
 @function box-shadow($stars) {
