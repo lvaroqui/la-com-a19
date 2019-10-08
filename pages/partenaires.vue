@@ -4,7 +4,10 @@
       <h1 class="center-text title">Nos partenaires</h1>
       <div class="flex h-center wrap">
         <div v-for="sponsor in sponsors" :key="sponsor.name" class="sponsor">
-          <div class="logo" :class="{ noBG: sponsor.noBG }">
+          <div
+            class="logo"
+            :class="{ noBG: sponsor.noBG, black: sponsor.blackBG }"
+          >
             <img
               v-if="sponsor.img"
               :src="sponsor.img"
@@ -38,13 +41,15 @@ import Strava from '~/assets/img/sponsors/strava.png'
 import Polar from '~/assets/img/sponsors/polar.png'
 import Fil from '~/assets/img/sponsors/fil.png'
 import SiMDE from '~/assets/img/sponsors/simde.png'
+import TheatreIMG from '~/assets/img/sponsors/theatre.png'
+import LibrairieIMG from '~/assets/img/sponsors/librairie.jpg'
 
 export default {
   name: 'Partenaires',
   data() {
     return {
       sponsors: [
-        { name: 'Les théâtres de Compiègne' },
+        { name: 'Les théâtres de Compiègne', img: TheatreIMG, blackBG: 'true' },
         { name: 'Le BDE', img: BDEImg },
         { name: 'Le PAE', img: PAEImg, padding: '0.5em' },
         { name: "L'UTC", img: UTC, padding: '0.5em' },
@@ -54,7 +59,7 @@ export default {
         { name: 'La ville de Compiègne', padding: '0.5em', img: Compi },
         { name: 'Le Crous', img: Crous, padding: '0.5em' },
         { name: "L'antre de mondes", img: ADMImg },
-        { name: 'Librairie des Signes' },
+        { name: 'Librairie des Signes', img: LibrairieIMG, padding: '0.5em' },
         { name: 'Les petits bilingues', img: LPBImg },
         { name: 'La cauette à bière', img: CauetteImg },
         { name: 'SSP', img: SSP },
@@ -73,6 +78,10 @@ export default {
 <style lang="scss" scoped>
 .partenaires {
   background-color: $dark-grey-color;
+}
+
+.black {
+  background-color: black !important;
 }
 
 .title {
