@@ -1,15 +1,16 @@
 <template>
   <div id="wrapper">
-    <div id="affiche" class="full-page" style="position: relative;">
+    <div id="affiche">
       <div class="stars small"></div>
       <div class="stars medium"></div>
       <div class="stars large"></div>
-      <img id="sol" src="~/assets/img/affiche/sol.png" />
-      <img id="lampadaire" src="~/assets/img/affiche/lampadaire.png" />
-      <img id="titre" src="~/assets/img/affiche/titre.png" />
-      <img id="maison_gauche" src="~/assets/img/affiche/maison_gauche.png" />
+      <div id="central-elements">
+        <div id="central-elements-wrapper">
+          <img id="titre" src="~/assets/img/affiche/titre.png" />
+          <Lampadaire id="lampadaire" />
+        </div>
+      </div>
       <img id="nuage_gauche" src="~/assets/img/affiche/nuage_gauche.png" />
-      <img id="maison_droite" src="~/assets/img/affiche/maison_droite.png" />
       <img id="nuage_droite" src="~/assets/img/affiche/nuage_droite.png" />
     </div>
     <base-scroll-arrow :show="showArrow"></base-scroll-arrow>
@@ -37,11 +38,12 @@
 <script>
 import { throttle } from 'lodash'
 import BaseScrollArrow from '../components/BaseScrollArrow'
+import Lampadaire from '~/assets/img/affiche/lampadaire.svg?inline'
 // import Affiche from '~/assets/svg/affiche.svg?inline'
 
 export default {
   name: 'Index',
-  components: { BaseScrollArrow },
+  components: { BaseScrollArrow, Lampadaire },
   data() {
     return {
       showArrow: true
@@ -66,6 +68,87 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$top-offset: 0px;
+
+#wrapper {
+  overflow: hidden;
+}
+#synopsis {
+  width: 120%;
+  margin-left: -10%;
+  box-shadow: 0 -60px 40px $dark-grey-color;
+  background-color: $dark-grey-color;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+#synopsis-child {
+  width: 80vw;
+}
+
+#affiche {
+  height: calc(100vh + #{$top-offset});
+  padding-top: $top-offset;
+  position: relative;
+  background: radial-gradient(
+    ellipse at bottom,
+    rgb(9, 45, 66) 0%,
+    rgb(0, 22, 34) 100%
+  );
+}
+
+#central-elements {
+  position: absolute;
+  @mixin styling($width) {
+    width: $width;
+    margin: -$top-offset auto 0 auto;
+    left: calc(50% - #{$width} / 2);
+  }
+  @include styling(700px);
+
+  @include screen-max-width(730px) {
+    @include styling(100%);
+  }
+}
+
+#central-elements-wrapper {
+  position: relative;
+}
+
+#titre {
+  max-width: 100%;
+  max-height: 50vh;
+  display: block;
+  margin: 0 auto;
+}
+
+#lampadaire {
+  width: 70%;
+  margin: 0 auto;
+  display: block;
+  @include screen-max-width(500px) {
+    width: 315px;
+    position: absolute;
+    top: 310px;
+    left: calc(50% - 315px / 2);
+  }
+}
+
+#nuage_gauche {
+  position: absolute;
+  top: 10%;
+  right: 60%;
+  @include screen-max-width(800px) {
+    right: 35%;
+  }
+}
+
+#nuage_droite {
+  position: absolute;
+  top: 10%;
+  left: 60%;
+}
+
 @function box-shadow($stars) {
   $bxshadow: ();
   @for $i from 1 to $stars {
@@ -102,225 +185,6 @@ $bxshadow-small: box-shadow(800);
   background: transparent;
   box-shadow: $bxshadow-small;
   animation: blink-small 3s infinite;
-}
-
-#wrapper {
-  overflow: hidden;
-}
-#synopsis {
-  width: 120%;
-  margin-left: -10%;
-  box-shadow: 0 -50px 50px $dark-grey-color;
-  background-color: $dark-grey-color;
-  transform: translateY(0);
-  opacity: 1;
-}
-
-#synopsis-child {
-  width: 80vw;
-}
-
-#affiche {
-  padding-top: 100px;
-  background: radial-gradient(
-    ellipse at bottom,
-    rgb(9, 45, 66) 0%,
-    rgb(0, 22, 34) 100%
-  );
-}
-
-#titre {
-  $width: 35%;
-  position: absolute;
-  width: $width;
-  margin: -100px auto 0 auto;
-  left: calc(50% - #{$width} / 2);
-}
-
-#maison_gauche {
-  position: absolute;
-  height: 70%;
-  bottom: 12%;
-  left: 8%;
-}
-
-#nuage_gauche {
-  position: absolute;
-  height: 100%;
-  top: 20%;
-  left: -20%;
-}
-
-#maison_droite {
-  position: absolute;
-  height: 70%;
-  bottom: 12%;
-  right: 6%;
-}
-
-#nuage_droite {
-  position: absolute;
-  height: 100%;
-  top: 27%;
-  right: -20%;
-}
-
-#sol {
-  $width: 80%;
-  width: $width;
-  position: absolute;
-  bottom: -25%;
-  left: calc(50% - #{$width} / 2);
-}
-
-#lampadaire {
-  $width: 10%;
-  width: $width;
-  position: absolute;
-  bottom: 10px;
-  left: calc(50% - #{$width} / 2);
-}
-
-@media screen and (max-width: 1500px) {
-  #nuage_gauche {
-    left: -30%;
-  }
-
-  #nuage_droite {
-    right: -28%;
-  }
-}
-
-@media screen and (max-width: 1330px) {
-  #maison_gauche {
-    left: -5%;
-  }
-
-  #maison_droite {
-    right: -5%;
-  }
-  #nuage_gauche {
-    left: -50%;
-  }
-
-  #nuage_droite {
-    right: -50%;
-  }
-
-  #sol {
-    $width: 100%;
-    width: $width;
-    bottom: -25%;
-    left: calc(50% - #{$width} / 2);
-  }
-
-  #lampadaire {
-    $width: 15%;
-    width: $width;
-    bottom: 0;
-    left: calc(50% - #{$width} / 2);
-  }
-}
-
-@media screen and (max-width: 1050px) {
-  #titre {
-    $width: 55%;
-    top: 5%;
-    position: absolute;
-    width: $width;
-    margin: 0 auto;
-    left: calc(50% - #{$width} / 2);
-  }
-
-  #maison_gauche {
-    display: none;
-  }
-
-  #maison_droite {
-    display: none;
-  }
-  #nuage_gauche {
-    display: none;
-  }
-
-  #nuage_droite {
-    display: none;
-  }
-
-  #sol {
-    $width: 100%;
-    width: $width;
-    bottom: -50px;
-    left: calc(50% - #{$width} / 2);
-  }
-
-  #lampadaire {
-    $width: 15%;
-    width: $width;
-    padding-bottom: 15%;
-    bottom: -50px;
-    left: calc(50% - #{$width} / 2);
-  }
-}
-
-@media screen and (max-width: 700px) {
-  #titre {
-    $width: 90%;
-    top: 5%;
-    position: absolute;
-    width: $width;
-    margin: 0 auto;
-    left: calc(50% - #{$width} / 2);
-  }
-
-  #sol {
-    $width: 100%;
-    width: $width;
-    bottom: 0px;
-    left: calc(50% - #{$width} / 2);
-  }
-
-  #lampadaire {
-    $width: 15%;
-    width: $width;
-    padding-bottom: 15%;
-    bottom: 0;
-    left: calc(50% - #{$width} / 2);
-  }
-}
-
-@media screen and (max-width: 500px) {
-  #sol {
-    $width: 150%;
-    width: $width;
-    bottom: 0px;
-    left: calc(50% - #{$width} / 2);
-  }
-
-  #lampadaire {
-    $width: 25%;
-    width: $width;
-    padding-bottom: 25%;
-    bottom: 0;
-    left: calc(50% - #{$width} / 2);
-  }
-}
-
-@media screen and (max-width: 290px) {
-  #sol {
-    $width: 150%;
-    width: $width;
-    bottom: 0px;
-    left: calc(50% - #{$width} / 2);
-  }
-
-  #lampadaire {
-    $width: 40%;
-    width: $width;
-    padding-bottom: 25%;
-    bottom: 0;
-    left: calc(50% - #{$width} / 2);
-  }
 }
 
 @keyframes blink-large {
