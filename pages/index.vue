@@ -206,7 +206,7 @@ $top-offset: 0px;
       comma
     );
   }
-  @return unquote($bxshadow);
+  @return $bxshadow;
 }
 
 $bxshadow-large: box-shadow(300);
