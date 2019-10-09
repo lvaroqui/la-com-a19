@@ -7,6 +7,10 @@
       <div id="central-elements">
         <div id="central-elements-wrapper">
           <img id="titre" src="~/assets/img/affiche/titre.png" />
+          <div class="infos center-text">
+            <h1>Le 18, 19 et 20 décembre 2019</h1>
+            <h2>Au Théatre Impérial de Compiègne</h2>
+          </div>
           <Lampadaire id="lampadaire" />
         </div>
       </div>
@@ -73,7 +77,6 @@ export default {
 }
 
 .lampadaire-glow {
-  animation: lampadaireGlow ease 2.5s alternate infinite;
   filter: url(#softGlowLampadaire1);
 }
 
@@ -106,6 +109,19 @@ $top-offset: 0px;
   width: 80vw;
 }
 
+.infos {
+  margin: 0 0 1.5em 0;
+  @include screen-max-width(800px) {
+    font-size: 0.9em;
+  }
+  @include screen-max-width(480px) {
+    font-size: 0.7em;
+  }
+  @include screen-max-width(380px) {
+    font-size: 0.5em;
+  }
+}
+
 #affiche {
   height: calc(100vh + #{$top-offset});
   padding-top: $top-offset;
@@ -115,6 +131,10 @@ $top-offset: 0px;
     rgb(9, 45, 66) 0%,
     rgb(0, 22, 34) 100%
   );
+  @include screen-min-width(700px) {
+    height: calc(1000px + #{$top-offset});
+    padding-top: $top-offset;
+  }
 }
 
 #central-elements {

@@ -41,7 +41,12 @@ export default {
         { id: 1, text: "L'asso", to: '/asso' },
         { id: 2, text: 'Partenaires', to: '/partenaires' },
         { id: 3, text: 'Billetterie', to: '/billetterie' },
-        { id: 4, text: 'Contact', to: '/contact' }
+        { id: 4, text: 'Contact', to: '/contact' },
+        {
+          id: 5,
+          text: 'Archives',
+          to: 'archives'
+        }
       ],
       isActive: false
     }
@@ -55,7 +60,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$mobile-width-breakpoint: 1200px;
+$mobile-width-breakpoint: 1300px;
 nav {
   position: fixed;
   top: 0;
