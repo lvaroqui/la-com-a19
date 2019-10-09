@@ -14,7 +14,11 @@
           <img
             v-if="!resp.noImg"
             class="picture"
-            :src="`/trombi/${resp.name.toLowerCase().replace(' ', '_')}.jpg`"
+            :src="
+              `/comedmus/2019/trombi/${resp.name
+                .toLowerCase()
+                .replace(' ', '_')}.jpg`
+            "
             :alt="resp.name"
           />
           <h2 class="center-text role">
