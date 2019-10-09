@@ -239,7 +239,7 @@ export default {
         subTeams: [
           {
             name: 'Assistant.e.s mise en scène',
-            members: [{ name: 'Clément	Vadaine' }, { name: 'Camille Rochelet' }]
+            members: [{ name: 'Clément	Vadaine' }]
           },
           {
             name: 'Acteur.rice.s',
@@ -262,8 +262,8 @@ export default {
       },
       teamDance: {
         resps: [
-          { role: 'Chorégraphes', name: 'Jade Lecerf' },
-          { role: 'Chorégraphes', name: 'Valentine Delrieu' }
+          { role: 'Chorégraphe', name: 'Jade Lecerf' },
+          { role: 'Chorégraphe', name: 'Valentine Delrieu' }
         ],
         subTeams: [
           {

@@ -1,6 +1,3 @@
-const prod = process.env.NODE_ENV === 'production'
-const isDevelop = process.env.IS_DEVELOP
-
 export default {
   mode: 'spa',
   /*
@@ -18,13 +15,20 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        content:
+          "La Compagnie des Lampes, la nouvelle comédie musicale de l'UTC"
+      },
+      { property: 'og:image', content: '/comedmus/2019/miniature.png' },
+      { property: 'og:image:type', content: 'image/png' },
+      { property: 'og:image:width', content: '500' },
+      { property: 'og:image:height', content: '408' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/comedmus/2019/favicon.ico' }
+    ]
   },
   router: {
-    base: !isDevelop && prod ? '/comedmus/2019/' : '/'
+    base: '/comedmus/2019/'
   },
   /*
    ** Customize the progress-bar color
