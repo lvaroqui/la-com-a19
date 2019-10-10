@@ -177,13 +177,17 @@ $top-offset: 0px;
 }
 
 #nuage_gauche {
-  position: absolute;
-  top: 10%;
-  right: 60%;
+  display: none;
+  @include screen-min-width(500px) {
+    display: block;
+    position: absolute;
+    top: 10%;
+    right: 60%;
+    animation: move-nuage-gauche ease-in-out 5s -1s infinite;
+  }
   @include screen-max-width(800px) {
     right: 35%;
   }
-  animation: move-nuage-gauche ease-in-out 5s -1s infinite;
 }
 
 @keyframes move-nuage-gauche {
@@ -199,10 +203,15 @@ $top-offset: 0px;
 }
 
 #nuage_droite {
-  position: absolute;
-  top: 10%;
-  left: 60%;
-  animation: move-nuage-droite ease-in-out 5s infinite;
+  display: none;
+
+  @include screen-min-width(500px) {
+    display: block;
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    animation: move-nuage-droite ease-in-out 5s infinite;
+  }
 }
 
 @keyframes move-nuage-droite {
@@ -238,21 +247,27 @@ $bxshadow-small: box-shadow(800);
   width: 3px;
   background: transparent;
   box-shadow: $bxshadow-large;
-  animation: blink-large 7s infinite;
+  @include screen-min-width(500px) {
+    animation: blink-large 7s infinite;
+  }
 }
 .stars.medium {
   height: 2px;
   width: 2px;
   background: transparent;
   box-shadow: $bxshadow-medium;
-  animation: blink-medium 5s infinite;
+  @include screen-min-width(500px) {
+    animation: blink-medium 5s infinite;
+  }
 }
 .stars.small {
   height: 1px;
   width: 1px;
   background: transparent;
   box-shadow: $bxshadow-small;
-  animation: blink-small 3s infinite;
+  @include screen-min-width(500px) {
+    animation: blink-small 3s infinite;
+  }
 }
 
 @keyframes blink-large {
