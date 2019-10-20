@@ -1,6 +1,6 @@
 # Website for "La Com' A19"
 
-This website is a showcase the "La Com'" UTC club available [here](https://assos.utc.fr/comedmus/2019/)
+This website is a showcase the "La Com'" UTC club available [here](https://assos.utc.fr/comedmus/2019/).
 
 ## Build Setup
 
