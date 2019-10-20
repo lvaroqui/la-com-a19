@@ -1,22 +1,13 @@
-# la-com-p19
+# Website for "La Com' A19"
 
-> La Com' A19 Website - UTC
+This website is a showcase the "La Com'" UTC club available [here](https://assos.utc.fr/comedmus/2019/)
 
 ## Build Setup
 
 ``` bash
 # install dependencies
-$ yarn install
+$ pnpm install
 
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
+# run development server
+$ pnpm run dev
 ```
-
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
