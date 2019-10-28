@@ -224,6 +224,7 @@ export default {
               { name: 'Line Mardini', role: 'Alto' },
               { name: 'Anouk Chômienne', role: 'Violoncelle ' },
               { name: 'Eugène Pin', role: 'Violoncelle ' },
+              { name: 'Salomé Wanty', role: 'Violoncelle' },
               { name: 'Elise Helfer', role: 'Contrebasse ' },
               { name: 'Sébastien Darche', role: 'Guitare ' }
             ]
