@@ -51,7 +51,7 @@ export default {
   margin: 1em 0 1em 0;
   font-size: 2.5em;
   @include md {
-    margin: 3em 0 1em 0;
+    margin: 2em 0 1em 0;
   }
 }
 
