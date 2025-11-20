@@ -15,7 +15,7 @@
             v-if="!resp.noImg"
             class="picture"
             :src="
-              `/comedmus/2019/trombi/${resp.name
+              `/trombi/${resp.name
                 .toLowerCase()
                 .replace(' ', '_')}.jpg`
             "

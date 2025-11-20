@@ -18,18 +18,18 @@ export default {
         content:
           "La Compagnie des Lampes, la nouvelle comédie musicale de l'UTC"
       },
-      { property: 'og:image', content: '/comedmus/2019/miniature.png' },
+      { property: 'og:image', content: '/miniature.png' },
       { property: 'og:image:type', content: 'image/png' },
       { property: 'og:image:width', content: '500' },
       { property: 'og:image:height', content: '408' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/comedmus/2019/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  router: {
-    base: '/comedmus/2019/'
-  },
+  // router: {
+  //   base: '/'
+  // },
   /*
    ** Customize the progress-bar color
    */
