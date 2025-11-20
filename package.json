@@ -9,7 +9,7 @@
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "eslint-check": "eslint --print-config .js | eslint-config-prettier-check",
     "dev": "nuxt --hostname 0.0.0.0",
-    "build": "NODE_ENV=dev nuxt build",
+    "build": "nuxt build",
     "build-test": "IS_DEVELOP=true nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
